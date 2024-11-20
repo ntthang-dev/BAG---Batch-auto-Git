@@ -4,6 +4,24 @@ color 0a
 cls
 
 :start_animation
+echo //////////////////////////////////////////////////////////////
+ping localhost -n 1 >nul
+echo // ███████╗ ██████╗ ████████╗ █████╗ ███╗   ██╗ ██████╗       //
+ping localhost -n 1 >nul
+echo // ╚══███╔╝██╔═══██╗╚══██╔══╝██╔══██╗████╗  ██║██╔═══██╗      //
+ping localhost -n 1 >nul
+echo //   ███╔╝ ██║   ██║   ██║   ███████║██╔██╗ ██║██║   ██║     //
+ping localhost -n 1 >nul
+echo //  ███╔╝  ██║   ██║   ██║   ██╔══██║██║╚██╗██║██║   ██║     //
+ping localhost -n 1 >nul
+echo // ███████╗╚██████╔╝   ██║   ██║  ██║██║ ╚████║╚██████╔╝     //
+ping localhost -n 1 >nul
+echo // ╚══════╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝     //
+ping localhost -n 1 >nul
+echo ////////////////////////////////////////////////////////////
+ping localhost -n 1 >nul
+echo Loading. Please Wait
+ping localhost -n 5 >nul
 cls
 echo.
 echo.
@@ -25,6 +43,39 @@ echo        Loading...        Please Wait
 echo    ---------------------------------------
 echo                                    =   0 ]
 echo    ---------------------------------------
+echo Dang kiem tra ket noi internet...
+
+REM Chay lenh ipconfig /all va luu ket qua vao file tam thoi
+ipconfig /all > ipconfig_temp.txt
+
+REM Khoi tao bien kiem tra ket noi internet
+set connected=false
+set "gateway_ip="
+
+REM Doc file tam thoi va tim dia chi IP cua Default Gateway
+for /f "tokens=3 delims= " %%a in ('findstr /i /c:"Default Gateway" ipconfig_temp.txt') do (
+    set gateway_ip=%%a
+    REM Neu tim thay gateway hop le, danh dau la ket noi
+    if not "!gateway_ip!"=="0.0.0.0" (
+        set connected=true
+    )
+)
+
+REM Neu co ket noi, su dung dia chi IP cua gateway de ping kiem tra internet
+if "%connected%"=="true" (
+    echo Da ket noi mang, dang kiem tra ket noi internet voi gateway !gateway_ip! ...
+    ping !gateway_ip! -n 1 >nul 2>&1
+    if %errorlevel% neq 0 (
+        echo Khong co ket noi internet.
+    ) else (
+        echo Da ket noi internet.
+    )
+) else (
+    echo Khong co ket noi mang.
+)
+
+REM Xoa file tam thoi
+del ipconfig_temp.txt
 ping localhost -n 2 >nul
 cls
 echo.
@@ -110,6 +161,7 @@ echo    ---------------------------------------
 echo    [][][]                          =  23 ]
 echo    ---------------------------------------
 ping localhost -n 3 >nul
+:check_git_version
 REM Kiểm tra phiên bản Git hiện tại
 for /f "tokens=3" %%a in ('git --version 2^>nul') do set "current_version=%%a"
 
@@ -132,7 +184,9 @@ if "%current_version%"=="%latest_version%" (
 ) else (
     echo Ban dang su dung phien ban Git cu. Dang tai va cai dat phien ban moi nhat...
     REM Tải và cài đặt phiên bản Git mới nhất
-    powershell -Command "Start-Process msiexec.exe -ArgumentList '/i https://github.com/git-for-windows/git/releases/download/%latest_version%/Git-%latest_version%-64-bit.exe /quiet /norestart' -NoNewWindow -Wait"
+    @REM powershell -Command "Start-Process msiexec.exe -ArgumentList '/i https://github.com/git-for-windows/git/releases/download/%latest_version%/Git-%latest_version%-64-bit.exe /quiet /norestart' -NoNewWindow -Wait"
+    git update-git-for-windows
+
     git --version >nul 2>&1
     if %errorlevel% neq 0 (
         echo Khong the cai dat phien ban Git moi nhat. Vui long cai dat thu cong tu: https://git-scm.com/download/win
@@ -433,11 +487,21 @@ ping localhost -n 2 >nul
 
 :menu
 cls
+echo +======================================================+
+echo + ███████╗ ██████╗ ████████╗ █████╗ ███╗   ██╗ ██████╗   +
+echo +╚══███╔╝██╔═══██╗╚══██╔══╝██╔══██╗████╗  ██║██╔═══██╗    +
+echo +  ███╔╝ ██║   ██║   ██║   ███████║██╔██╗ ██║██║   ██║   + 
+echo + ███╔╝  ██║   ██║   ██║   ██╔══██║██║╚██╗██║██║   ██║   +
+echo +███████╗╚██████╔╝   ██║   ██║  ██║██║ ╚████║╚██████╔╝   +    
+echo +╚══════╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝    +
+echo +=====================================================+
+ping localhost -n 3 > nul 
+cls
 echo    **********************************************
 echo    *                                            *
 echo    *                 ZOTANO                     *
 echo    *                                            *
-echo    *       Author: Your Name                    *
+echo    *       Author: Nguyen Trong Thang           *
 echo    *       Created: November 20, 2024           *
 echo    *       License: MIT License                 *
 echo    **********************************************
@@ -598,6 +662,9 @@ goto back_to_menu_en
 
 :check_en
 cls
+echo Loading. Please Wait
+ping localhost -n 2 >nul
+
 echo **********************************************
 echo          CHECK GIT LOGIN INFO      
 echo **********************************************
