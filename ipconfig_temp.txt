@@ -1,0 +1,73 @@
+
+Windows IP Configuration
+
+   Host Name . . . . . . . . . . . . : NTTHANG
+   Primary Dns Suffix  . . . . . . . : 
+   Node Type . . . . . . . . . . . . : Mixed
+   IP Routing Enabled. . . . . . . . : No
+   WINS Proxy Enabled. . . . . . . . : No
+   DNS Suffix Search List. . . . . . : hcmut.edu.vn
+
+Ethernet adapter Ethernet:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Realtek PCIe FE Family Controller
+   Physical Address. . . . . . . . . : 54-48-10-AC-A2-78
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Local Area Connection* 12:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #3
+   Physical Address. . . . . . . . . : FE-01-7C-9E-B2-C9
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Wireless LAN adapter Wi-Fi:
+
+   Connection-specific DNS Suffix  . : hcmut.edu.vn
+   Description . . . . . . . . . . . : Qualcomm QCA9377 802.11ac Wireless Adapter
+   Physical Address. . . . . . . . . : FC-01-7C-9E-B2-C9
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::261:4451:812d:337a%6(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 10.130.149.237(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.0.0
+   Lease Obtained. . . . . . . . . . : Wednesday, November 20, 2024 2:17:55 PM
+   Lease Expires . . . . . . . . . . : Wednesday, November 20, 2024 4:19:53 PM
+   Default Gateway . . . . . . . . . : 10.130.0.1
+   DHCP Server . . . . . . . . . . . : 10.130.0.1
+   DHCPv6 IAID . . . . . . . . . . . : 133955964
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-0D-1E-9F-54-48-10-AC-A2-78
+   DNS Servers . . . . . . . . . . . : 10.130.0.4
+                                       10.130.0.2
+                                       172.28.2.2
+                                       172.28.2.4
+   NetBIOS over Tcpip. . . . . . . . : Enabled
+
+Ethernet adapter Bluetooth Network Connection 2:
+
+   Media State . . . . . . . . . . . : Media disconnected
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Bluetooth Device (Personal Area Network) #2
+   Physical Address. . . . . . . . . : FC-01-7C-9E-B2-CA
+   DHCP Enabled. . . . . . . . . . . : Yes
+   Autoconfiguration Enabled . . . . : Yes
+
+Ethernet adapter vEthernet (Default Switch):
+
+   Connection-specific DNS Suffix  . : 
+   Description . . . . . . . . . . . : Hyper-V Virtual Ethernet Adapter
+   Physical Address. . . . . . . . . : 00-15-5D-70-01-00
+   DHCP Enabled. . . . . . . . . . . : No
+   Autoconfiguration Enabled . . . . : Yes
+   Link-local IPv6 Address . . . . . : fe80::57ba:35a0:5f63:36b9%34(Preferred) 
+   IPv4 Address. . . . . . . . . . . : 192.168.160.1(Preferred) 
+   Subnet Mask . . . . . . . . . . . : 255.255.240.0
+   Default Gateway . . . . . . . . . : 
+   DHCPv6 IAID . . . . . . . . . . . : 570430813
+   DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-29-0D-1E-9F-54-48-10-AC-A2-78
+   NetBIOS over Tcpip. . . . . . . . : Enabled
